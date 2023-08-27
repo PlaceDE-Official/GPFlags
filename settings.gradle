@@ -1,0 +1,12 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven {
+            name = "papermc-repo"
+            url = "https://papermc.io/repo/repository/maven-public/"
+        }
+    }
+}
+
+rootProject.name = "GPFlags"
+
