@@ -2,6 +2,8 @@ package me.ryanhamshire.GPFlags;
 
 import java.util.*;
 
+import com.tcoded.folialib.FoliaLib;
+import com.tcoded.folialib.impl.ServerImplementation;
 import me.ryanhamshire.GPFlags.commands.*;
 import me.ryanhamshire.GPFlags.flags.FlagDefinition;
 import me.ryanhamshire.GPFlags.listener.ClaimModifiedListener;
@@ -31,8 +33,11 @@ public class GPFlags extends JavaPlugin {
     boolean registeredFlagDefinitions = false;
     private PlayerListener playerListener;
 
+    private FoliaLib scheduler;
+
 
     public void onEnable() {
+        scheduler = new FoliaLib(this);
         long start = System.currentTimeMillis();
         instance = this;
 
@@ -86,6 +91,10 @@ public class GPFlags extends JavaPlugin {
 
         float finish = (float) (System.currentTimeMillis() - start) / 1000;
         Util.log("Successfully loaded in &b%.2f seconds", finish);
+    }
+
+    public ServerImplementation getScheduler() {
+        return scheduler.getImpl();
     }
 
     public void onDisable() {

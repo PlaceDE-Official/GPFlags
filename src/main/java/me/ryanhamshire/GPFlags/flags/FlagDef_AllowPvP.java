@@ -1,6 +1,7 @@
 package me.ryanhamshire.GPFlags.flags;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -290,9 +291,9 @@ public class FlagDef_AllowPvP extends PlayerMovementFlagDefinition {
                     if(projs.size() > 1) {
                         if(justFiredCrossbow.contains(player)) return;
                         justFiredCrossbow.add(player);
-                        Bukkit.getScheduler().runTaskLater(GPFlags.getInstance(), () -> {
+                        this.plugin.getScheduler().runLater(() -> {
                             justFiredCrossbow.remove(player);
-                        }, 5); // players have to fully charge their crossbow to fire more than one projectile.
+                        }, 5*20, TimeUnit.MILLISECONDS); // players have to fully charge their crossbow to fire more than one projectile.
                                // We can give this time to account for lag
                     }
                     

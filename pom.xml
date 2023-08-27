@@ -16,6 +16,10 @@
 
     <repositories>
         <repository>
+            <id>rs-git</id>
+            <url>https://git.redstonesucht.de/api/packages/DevMiner/maven</url>
+        </repository>
+        <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
@@ -42,19 +46,29 @@
             <id>akiradev-repo</id>
             <url>https://repo.akiradev.xyz/repository/public/</url>
         </repository>
+        <repository>
+            <id>devmart-other</id>
+            <url>https://nexuslite.gcnt.net/repos/other/</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.purpurmc.purpur</groupId>
-            <artifactId>purpur-api</artifactId>
-            <version>1.19.3-R0.1-SNAPSHOT</version>
+            <groupId>army.place.folia</groupId>
+            <artifactId>folia-api</artifactId>
+            <version>1.20.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.TechFortress</groupId>
+            <groupId>com.tcoded</groupId>
+            <artifactId>FoliaLib</artifactId>
+            <version>0.2.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.griefprevention</groupId>
             <artifactId>GriefPrevention</artifactId>
-            <version>16.18.2-beta1</version>
+            <version>17.0.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
